@@ -1,0 +1,8 @@
+name = Views Vertical Tabs Style
+description = Shows views rows as vertical_tabs
+
+core = 7.x
+dependencies[] = views
+package = Views
+
+files[] = views_plugin_style_vertical_tabs.inc
