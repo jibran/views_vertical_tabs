@@ -1,13 +1,17 @@
+/**
+ * @file
+ * Provides the summary information for the views vertical tabs.
+ */
+
 (function ($) {
 
-/**
- * Provide the summary information for the views vertical tabs.
- */
+"use strict";
+
 Drupal.behaviors.viewsVerticalTabsSummary = {
   attach: function (context, settings) {
     // The drupalSetSummary method required for this behavior so we need to make
     // sure this behavior is processed only if drupalSetSummary is defined.
-    if (typeof jQuery.fn.drupalSetSummary == 'undefined') {
+    if (typeof jQuery.fn.drupalSetSummary === 'undefined') {
       return;
     }
 

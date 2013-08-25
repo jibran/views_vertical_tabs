@@ -1,0 +1,7 @@
+name : 'Views Vertical Tabs Style'
+type : module
+description : 'Shows views rows as vertical_tabs'
+package : Views
+core : 8.x
+dependencies :
+  - views
