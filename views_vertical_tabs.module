@@ -36,6 +36,7 @@ function template_preprocess_views_view_vertical_tabs(&$vars) {
   // Set up striping values.
   $count = 0;
   $max = count($rows);
+  $summaries = array();
   foreach ($rows as $id => $row) {
     $html_id = drupal_html_id($group . '-' . $id);
     $classes = array();
@@ -86,7 +87,7 @@ function template_preprocess_views_view_vertical_tabs(&$vars) {
       $summary = strip_tags(htmlspecialchars_decode($summary));
     }
     if (!empty($summary)) {
-      $summarys[$html_id] = $summary;
+      $summaries[$html_id] = $summary;
     }
 
     $element[$id] = array(
@@ -102,6 +103,6 @@ function template_preprocess_views_view_vertical_tabs(&$vars) {
       ),
     );
   }
-  drupal_add_js(array('views_vertical_tabs' => array($group => $summarys)), 'setting');
+  drupal_add_js(array('views_vertical_tabs' => array($group => $summaries)), 'setting');
   $vars['vertical_tabs'][] = $element;
 }
