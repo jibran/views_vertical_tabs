@@ -7,8 +7,8 @@
 
 namespace Drupal\views_vertical_tabs\Plugin\views\style;
 
-use Drupal\Component\Annotation\Plugin;
 use Drupal\Core\Annotation\Translation;
+use Drupal\views\Annotation\ViewsStyle;
 use Drupal\views\Plugin\views\style\StylePluginBase;
 
 
@@ -17,7 +17,7 @@ use Drupal\views\Plugin\views\style\StylePluginBase;
  *
  * @ingroup views_style_plugins
  *
- * @Plugin(
+ * @ViewsStyle(
  *   id = "vertical_tabs",
  *   title = @Translation("Vertical Tabs"),
  *   help = @Translation("Displays rows as Vertical tabs."),
