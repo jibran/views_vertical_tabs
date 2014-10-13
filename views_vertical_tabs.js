@@ -17,7 +17,7 @@ Drupal.behaviors.viewsVerticalTabsSummary = {
 
     $.each(settings.views_vertical_tabs, function(){
       $.each(this, function(id, summary){
-        $('fieldset#' + id, context).drupalSetSummary(function(context) {
+        $('details#' + id, context).drupalSetSummary(function(context) {
           return summary;
         });
       });
