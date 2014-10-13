@@ -7,9 +7,8 @@
 
 namespace Drupal\views_vertical_tabs\Plugin\views\style;
 
-use Drupal\Core\Annotation\Translation;
-use Drupal\views\Annotation\ViewsStyle;
 use Drupal\views\Plugin\views\style\StylePluginBase;
+use Drupal\Core\Form\FormStateInterface;
 
 
 /**
@@ -74,7 +73,7 @@ class VerticalTabs extends StylePluginBase {
   /**
    * {@inheritdoc}
    */
-  public function buildOptionsForm(&$form, &$form_state) {
+  public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
     $options = array('' => t('- None -'));
     $field_labels = $this->displayHandler->getFieldLabels(TRUE);
