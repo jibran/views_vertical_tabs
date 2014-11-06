@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\views_vertical_tabs\Plugin\views\style\VerticalTabs.
+ * Contains \Drupal\views_vertical_tabs\Plugin\views\style\VerticalTabsStyle.
  */
 
 namespace Drupal\views_vertical_tabs\Plugin\views\style;
@@ -24,7 +24,7 @@ use Drupal\Core\Form\FormStateInterface;
  *   display_types = {"normal"}
  * )
  */
-class VerticalTabs extends StylePluginBase {
+class VerticalTabsStyle extends StylePluginBase {
 
   /**
    * Does the style plugin allows to use style plugins.
@@ -75,34 +75,34 @@ class VerticalTabs extends StylePluginBase {
    */
   public function buildOptionsForm(&$form, FormStateInterface $form_state) {
     parent::buildOptionsForm($form, $form_state);
-    $options = array('' => t('- None -'));
+    $options = array('' => $this->t('- None -'));
     $field_labels = $this->displayHandler->getFieldLabels(TRUE);
     $options += $field_labels;
 
     $form['title'] = array(
       '#type' => 'select',
-      '#title' => t('Tab Title'),
+      '#title' => $this->t('Tab Title'),
       '#options' => $options,
       '#default_value' => $this->options['title'],
-      '#description' => t('Choose the title of each tab.'),
+      '#description' => $this->t('Choose the title of each tab.'),
       '#weight' => -49,
     );
 
     $form['summary'] = array(
       '#type' => 'select',
-      '#title' => t('Tab Summary'),
+      '#title' => $this->t('Tab Summary'),
       '#options' => $options,
       '#default_value' => $this->options['summary'],
-      '#description' => t('Optional tab summary.'),
+      '#description' => $this->t('Optional tab summary.'),
       '#weight' => -48,
     );
 
     $form['description'] = array(
       '#type' => 'select',
-      '#title' => t('Fieldset Description'),
+      '#title' => $this->t('Fieldset Description'),
       '#options' => $options,
       '#default_value' => $this->options['description'],
-      '#description' => t('Optional tab description.'),
+      '#description' => $this->t('Optional tab description.'),
       '#weight' => -47,
     );
   }
