@@ -111,11 +111,8 @@ function template_preprocess_views_view_vertical_tabs(&$variables) {
     );
     RenderElement::processGroup($element['row-' . $id], $form_state, $form);
   }
-  $element['views_vertical_tabs']['#attached']['js'] = array(
-    array(
-      'type' => 'setting',
-      'data' => array('views_vertical_tabs' => array($group => $summaries))
-    ),
+  $element['views_vertical_tabs']['#attached']['drupalSettings'] = array(
+    'views_vertical_tabs' => array($group => $summaries),
   );
 
   $variables['vertical_tabs'] = $element;

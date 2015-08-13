@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 
 
 /**
- * Style plugin to render each item in an ordered or unordered list.
+ * Defines a style plugin that renders the full view as vertical_tabs.
  *
  * @ingroup views_style_plugins
  *
